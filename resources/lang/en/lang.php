@@ -6241,4 +6241,5 @@ _Message' => 'Customer notification for provider bid offer
   'Basic Information Setup' => 'Basic Information Setup',
   'Admin can choose a specific section, like mobile app, web app, provider panel, provider app, serviceman app, or all systems, to temporarily deactivate for maintenance.' => 'Admin can choose a specific section, like mobile app, web app, provider panel, provider app, serviceman app, or all systems, to temporarily deactivate for maintenance.',
   'Turning on Maintenance mode will temporarily close your online site. So that the admin can do important updates or fixes' => 'Turning on Maintenance mode will temporarily close your online site. So that the admin can do important updates or fixes',
+  'wrong login credentials' => 'Wrong login credentials',
 );

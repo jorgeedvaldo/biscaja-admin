@@ -43,6 +43,32 @@ Route::get('business-page/{slug}', [LandingController::class, 'dynamicPage'])->n
 Route::get('maintenance-mode', [LandingController::class, 'maintenanceMode'])->name('maintenance-mode');
 Route::post('subscribe-newsletter',[LandingController::class, 'subscribeNewsletter'])->name('subscribe-newsletter');
 
+Route::get('/firebase-messaging-sw.js', function () {
+    $content = "importScripts('https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js');
+firebase.initializeApp({
+    apiKey: \"" . env('FIREBASE_API_KEY') . "\",
+    authDomain: \"" . env('FIREBASE_AUTH_DOMAIN') . "\",
+    projectId: \"" . env('FIREBASE_PROJECT_ID') . "\",
+    storageBucket: \"" . env('FIREBASE_STORAGE_BUCKET') . "\",
+    messagingSenderId: \"" . env('FIREBASE_MESSAGING_SENDER_ID') . "\",
+    appId: \"" . env('FIREBASE_APP_ID') . "\",
+    measurementId: \"\"
+});
+const messaging = firebase.messaging();
+messaging.setBackgroundMessageHandler(function (payload) {
+    return self.registration.showNotification(payload.data.title, {
+        body: payload.data.body ? payload.data.body : '',
+        icon: payload.data.icon ? payload.data.icon : ''
+    });
+});";
+
+    return response($content, 200, [
+        'Content-Type' => 'application/javascript',
+        'Cache-Control' => 'public, max-age=3600'
+    ]);
+});
+
 Route::fallback(function () {
     return redirect('admin/auth/login');
 });

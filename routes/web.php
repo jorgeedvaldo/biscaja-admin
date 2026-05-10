@@ -31,8 +31,8 @@ Route::get('/image-proxy', function () {
         ->header('Access-Control-Allow-Origin', '*');
 });
 
-Route::get('activation-check', [InstallController::class, 'getActivationCheckView'])->name('system.activation-check');
-Route::post('activation-check', [InstallController::class, 'activationCheck']);
+//Route::get('activation-check', [InstallController::class, 'getActivationCheckView'])->name('system.activation-check');
+//Route::post('activation-check', [InstallController::class, 'activationCheck']);
 
 Route::get('lang/{locale}', [LandingController::class, 'lang'])->name('lang');
 Route::get('/', [LandingController::class, 'home'])->name('home');
@@ -41,7 +41,7 @@ Route::get('page/contact-us', [LandingController::class, 'contactUs'])->name('pa
 Route::get('business-page/{slug}', [LandingController::class, 'dynamicPage'])->name('business.page.dynamic');
 
 Route::get('maintenance-mode', [LandingController::class, 'maintenanceMode'])->name('maintenance-mode');
-Route::post('subscribe-newsletter',[LandingController::class, 'subscribeNewsletter'])->name('subscribe-newsletter');
+Route::post('subscribe-newsletter', [LandingController::class, 'subscribeNewsletter'])->name('subscribe-newsletter');
 
 Route::get('/firebase-messaging-sw.js', function () {
     $content = "importScripts('https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js');

@@ -23,14 +23,14 @@ class ActivationCheckMiddleware
     {
         $response = $this->checkActivationCache(app: $area);
 
-        if (!$response) {
+        if (false) {
             if (!strpos(url()->current(), '/api')) {
                 return Redirect::away(route(base64_decode('c3lzdGVtLmFjdGl2YXRpb24tY2hlY2s=')))->send();
             }
 
             return response()->json([
                 'code' => 'activation-503',
-                'message' => 'Please check activation for '. str_replace('_', ' ', $area),
+                'message' => 'Please check activation for ' . str_replace('_', ' ', $area),
             ], 503);
         }
         return $next($request);

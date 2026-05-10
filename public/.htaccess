@@ -5,6 +5,9 @@
 
     RewriteEngine On
 
+    # Redireciona tudo o que vem de /public/assets para /assets
+    RewriteRule ^public/assets/(.*)$ /assets/$1 [L,R=301]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

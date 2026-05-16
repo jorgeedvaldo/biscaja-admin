@@ -111,6 +111,21 @@ class LandingController extends Controller
         return view('maintenance-mode');
     }
 
+    public function comoFunciona(): Factory|View|Application
+    {
+        return view('pages.como-funciona');
+    }
+
+    public function sejaPrestador(): Factory|View|Application
+    {
+        return view('pages.seja-prestador');
+    }
+
+    public function ajuda(): Factory|View|Application
+    {
+        return view('pages.ajuda');
+    }
+
     public function lang($local): RedirectResponse
     {
         $direction = $this->businessSettings->where('key_name', 'site_direction')->first();

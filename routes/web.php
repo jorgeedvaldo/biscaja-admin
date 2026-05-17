@@ -38,10 +38,6 @@ Route::get('lang/{locale}', [LandingController::class, 'lang'])->name('lang');
 Route::get('/', [LandingController::class, 'home'])->name('home');
 Route::get('page/contact-us', [LandingController::class, 'contactUs'])->name('page.contact-us');
 
-Route::get('como-funciona', [LandingController::class, 'comoFunciona'])->name('biscaja.como-funciona');
-Route::get('seja-prestador', [LandingController::class, 'sejaPrestador'])->name('biscaja.seja-prestador');
-Route::get('ajuda', [LandingController::class, 'ajuda'])->name('biscaja.ajuda');
-
 Route::get('business-page/{slug}', [LandingController::class, 'dynamicPage'])->name('business.page.dynamic');
 
 Route::get('maintenance-mode', [LandingController::class, 'maintenanceMode'])->name('maintenance-mode');

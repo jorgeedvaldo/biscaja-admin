@@ -1,14 +1,10 @@
 <footer class="mt-24 bg-ink-900 text-ink-200">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-10 py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10">
         <div class="col-span-2 lg:col-span-2 max-w-sm">
-            <div class="flex items-center gap-2 mb-5">
-                <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-brand-500 text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 11l8-7 8 7M5 9.5V20a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V9.5"/></svg>
-                </span>
-                <div class="leading-tight">
-                    <div class="font-display font-extrabold text-[22px] text-white">Bisca<span class="text-brand-400">Já</span></div>
-                    <div class="text-[10px] uppercase tracking-[0.18em] text-ink-400 -mt-0.5">Trabalho num clique</div>
-                </div>
+            <div class="mb-5 inline-flex bg-white rounded-2xl px-4 py-3 shadow-soft">
+                <img src="{{ asset('public/assets/biscaja/biscaja_logo.png') }}"
+                     srcset="{{ asset('public/assets/biscaja/biscaja_logo.png') }} 1x, {{ asset('public/assets/biscaja/biscaja_logo@2x.png') }} 2x"
+                     alt="BiscaJá — Trabalho num clique" class="h-14 w-auto">
             </div>
             <p class="text-sm text-ink-300 leading-relaxed">
                 Conectamos você aos melhores profissionais da sua região com praticidade, segurança e qualidade garantida.
